@@ -10,7 +10,7 @@ class DiceCounter extends Component {
         return (
             <div>
                 <label>D{this.props.sides}</label>
-                <input type="text" id="D{this.props.sides}_total" name="D{this.props.sides}_total"/>
+                <input className="dice-input" type="text" id={`D${this.props.sides}_total`} name={`D${this.props.sides}`}/>
             </div>
         );
     }

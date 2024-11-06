@@ -26,9 +26,9 @@ class ExampleDiceTable extends Component {
                         // for (const key in roll.diceSet) {
                         //     conso6le.log(`D${key.toString()}: ${roll.diceSet[key].toString()}`)
                         // }
-                        console.log(run_trials(roll.diceSet()))
+                        console.log(run_trials(roll.diceSet))
                         const li = document.createElement('li')
-                        li.innerHTML = `${roll.id}: ${roll.diceSet}`
+                        li.innerHTML = `${roll.id}: ${roll.rollSum}`
 
                         document.getElementById(out_tag).append(li)
                     })
@@ -45,10 +45,6 @@ class ExampleDiceTable extends Component {
                 }
 
             }
-        }
-
-        function getRandomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
         }
 
         return (
