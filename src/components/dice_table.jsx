@@ -18,6 +18,26 @@ class DiceTable extends Component {
         );
 
         function get_roll() {
+            if (import.meta.env.DEV) {
+                const example_dice = {
+                    "diceSet": {
+                        "4": 0,
+                        "8": 0,
+                        "10": 0,
+                        "12": 0,
+                        "20": 1,
+                        "100": 0
+                    }
+                }
+                var sum = 0;
+                for (const key in example_dice.diceSet) {
+                    for(var i = 0; i < example_dice.diceSet[key]; i++) {
+                        sum += Math.floor(Math.random() * key) + 1;
+                    }
+                }
+                document.getElementById("roll_output").innerHTML = '<p>' + sum + '</p>';
+            }
+            else {
             var rollObj = {};
             rollObj['diceSet'] = {};
             var inputs = document.querySelectorAll("input.dice-input");
@@ -39,6 +59,7 @@ class DiceTable extends Component {
                 console.log(data);
                 document.getElementById("roll_output").innerHTML = '<p>' + data.rollSum + '</p>';
             });
+        }
         }
     }
 
