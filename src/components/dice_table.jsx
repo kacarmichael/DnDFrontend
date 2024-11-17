@@ -1,5 +1,6 @@
 import {Component} from 'react';
 import DiceCounter from "./dice_counter.jsx";
+//import probabilityChart from "./probability_chart.jsx";
 
 const get_apiURL = 'http://localhost:5025/api/Roll'
 
@@ -14,8 +15,14 @@ class DiceTable extends Component {
                 <DiceCounter sides="20" value="0"/>
                 <DiceCounter sides="100" value="0"/>
                 <button onClick={get_roll}>Roll</button>
+                <button onClick={get_probability}>Probability</button>
             </div>
         );
+
+        function get_probability() {
+            console.log("get_probability called")
+            //document.getElementById("probability_output").innerHTML = <probabilityChart/>;
+        }
 
         function get_roll() {
             if (import.meta.env.DEV) {
